@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PEC Hacks | Hackathon</title>
+  <link rel="icon" type="image/png" href="./pechacks favicon.png" />
+  <link href="./output.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7, #ec4899, #f59e0b);
+      background-size: 200% 200%;
+      animation: gradient-shift 4s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .coming-soon-glow {
+      animation: coming-soon-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes coming-soon-pulse {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 40px rgba(168, 85, 247, 1), 0 0 60px rgba(236, 72, 153, 0.6);
+        transform: scale(1.05);
+      }
+    }
+
+    .tilt-card {
+      perspective: 1000px;
+    }
+
+    .tilt-inner {
+      transform-style: preserve-3d;
+      transition: transform 0.4s ease;
+    }
+
+    .tilt-card:hover .tilt-inner {
+      transform: rotateY(6deg) translateY(-8px) scale(1.04);
+    }
+
+    .hover-outline::before,
+    .hover-outline::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(to right, transparent, white, transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 2;
+    }
+
+    .hover-outline::before {
+      top: 0;
+      left: 0;
+    }
+
+    .hover-outline::after {
+      bottom: 0;
+      left: 0;
+    }
+
+    .hover-outline .v-lines::before,
+    .hover-outline .v-lines::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, white, transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 2;
+    }
+
+    .hover-outline .v-lines::before {
+      left: 0;
+      top: 0;
+    }
+
+    .hover-outline .v-lines::after {
+      right: 0;
+      top: 0;
+    }
+
+    .tilt-card:hover .hover-outline::before,
+    .tilt-card:hover .hover-outline::after,
+    .tilt-card:hover .v-lines::before,
+    .tilt-card:hover .v-lines::after {
+      opacity: 0.4;
+    }
+
+    .box {
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+      transform: translate3d(0px, 20px, 0) scale(0.95);
+      filter: blur(30px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: inherit;
+      z-index: 0;
+    }
+
+    .box:hover::before {
+      opacity: 0.6;
+    }
+
+    .box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      border-radius: inherit;
+      z-index: -1;
+    }
+    
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px #a855f7; 
+  color: transparent;
+}
+
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-purple-900 text-white text-center py-3">
+    <header class="sticky top-0 z-50 bg-transparent backdrop-blur-md border-b border-transparent mb-2">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
+          <a href="#" class="flex items-center space-x-2">
+            <img src="./pechacks bgr.png" alt="Logo" class="h-8"> 
+          </a>
+        </nav>
+      </header>
+      
+
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-6xl md:text-8xl font-black gradient-text mb-2">PEC HACKS</h2>
+    <div class="text-4xl md:text-6xl font-bold text-stroke mb-5">3.0</div>
+    <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+      Where Innovation Meets <span class="text-purple-400 font-semibold">Excellence</span> in Tamil Nadu's Premier Hackathon
+    </p>
+
+    <div class="mb-8">
+      <div class="bg-black/40 backdrop-blur-md border border-transparent rounded-full px-12 py-2 inline-block">
+        <p class="text-3xl md:text-5xl font-bold text-purple-400 coming-soon-glow">
+          COMING SOON
+        </p>
+      </div>
+    </div>
+
+    <div class=" flex flex-wrap justify-center gap-6  px-4 py-6  cursor-pointer md:flex-nowrap">
+
+        <a href="https://pechacks.org/" class="w-full sm:w-[300px] md:w-[350px] max-w-sm bg-transparent border border-gray-800/50 hover:border-pink-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 backdrop-blur-md group relative overflow-hidden rounded-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+          <div class="p-8 text-center relative z-10">
+            <div class="mb-6 flex justify-center">
+              <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-pink-500/30">
+                <i class="fas fa-history text-white text-3xl"></i>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-pink-400 transition-colors duration-300">Previous Edition</h3>
+            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-lg">Explore PEC HACKS 2.0</p>
+          </div>
+        </a>
+      
+        <a href="#" class="w-full sm:w-[300px] md:w-[350px] max-w-sm bg-transparent border border-gray-800/50 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 backdrop-blur-md group relative overflow-hidden rounded-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+          <div class="p-8 text-center relative z-10">
+            <div class="mb-6 flex justify-center">
+              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-purple-500/30">
+                <i class="fas fa-clipboard-check text-white text-3xl"></i>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">Pre-Register Here</h3>
+            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-lg">Reserve Your Spot</p>
+          </div>
+        </a>
+      
+        <a href="https://chat.whatsapp.com/FtFHlapbGqPBxtZomqR5Km" class="w-full sm:w-[300px] md:w-[350px] max-w-sm bg-transparent border border-gray-800/50 hover:border-pink-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 backdrop-blur-md group relative overflow-hidden rounded-xl">
+          <div class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+          <div class="p-8 text-center relative z-10">
+            <div class="mb-6 flex justify-center">
+              <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-pink-500/30">
+                <i class="fas fa-comments text-white text-3xl"></i>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-pink-400 transition-colors duration-300">Community</h3>
+            <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 text-lg">Join the Network</p>
+          </div>
+        </a>
+      
+      </div>
+    </div> 
+    <div class="flex items-center gap-6 text-white text-2xl justify-center">
+        <a href="https://x.com/PECHacks" target="_blank">
+          <i class="fa-brands fa-x-twitter  hover:text-gray-400 cursor-pointer"></i>
+        </a>
+        <a href="https://www.instagram.com/pechacks/" target="_blank">
+          <i class="fa-brands fa-instagram hover:text-gray-400 cursor-pointer"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/pec-hacks/" target="_blank">
+          <i class="fa-brands fa-linkedin-in hover:text-gray-400 cursor-pointer"></i>
+        </a>
+    </div> 
+      
+</body>
+</html>
